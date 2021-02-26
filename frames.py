@@ -2,10 +2,13 @@ import cv2
 import os
 
 #Takes video
-vidcap =cv2.VideoCapture(input("Enter video name: ")) 
+file = input("Enter video name: ")
+vidcap =cv2.VideoCapture(file)
 success,image = vidcap.read()
+print("Current File Name : ",os.path.realpath(file)) #Shows the file path
 
-choice = int(input("1 Each frame after one second and 2 All frames : "))
+
+choice = int(input("Press 1 to extract each frame after one second and 2 All frames : "))
 
 if choice == 1 :
     count = 0
